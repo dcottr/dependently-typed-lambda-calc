@@ -1,0 +1,15 @@
+{
+  "name": "bidirectional-type-checker",
+  "scripts": {
+    "start": "./main.exe",
+    "build": "bsb -clean-world -make-world -backend native",
+    "clean": "bsb -clean-world",
+    "reformat": "bsrefmt --in-place $(find src -name '*.re' -print) -w 80",
+    "build-watch": "bsb -clean-world -make-world -backend native -- -w"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bsb-native": "^5.0.0",
+    "bs-platform-native": "0.0.8"
+  }
+}
