@@ -41,7 +41,6 @@ let prog =
     FreeVar("x"),
   );
 let prog = Application(depTypedIdentity, FreeVar("bool"));
-// let const = Annotation(Function(Function(BoundVar(1))), Forall({argType: Star, }))
 
 let rec termToStr = (~env=[], term) =>
   switch (term) {
@@ -160,5 +159,3 @@ let map = StringMap.add("x", VFreeVar("bool"), map);
 
 print_endline(valueToStr(synthesizeType(depTypedIdentity, map, [])));
 print_endline(valueToStr(synthesizeType(prog, map, [])));
-
-// TODO: test annotating with the type being a bound variable. See if the evaluate with [] env works.
